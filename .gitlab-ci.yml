@@ -10,7 +10,7 @@ ubuntu:
   - export KBUILD_BUILD_HOST=SRT
   - export ARCH=arm 
   - export CROSS_COMPILE=$PWD/arm-cortex-linux-gnueabi-linaro_5.2/bin/arm-cortex-linux-gnueabi- #тут тоже меняем путь к тулчейну, в зависимости от названия
-  - make -j2 blahblahblah_defconfig 1>/dev/null 
+  - make -j2 muse6582_y70_m_defconfig 1>/dev/null 
   - make -j2  1>builds.log 2>errors.log 
   - curl --upload-file builds.log https://transfer.sh/builds.log  |grep transfer
   - curl --upload-file errors.log https://transfer.sh/errors.log  |grep transfer
