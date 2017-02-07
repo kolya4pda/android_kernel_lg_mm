@@ -133,7 +133,7 @@ extern LCM_DRIVER nt35520_hd720_boe_lcm_drv;
 extern LCM_DRIVER nt35521_hd720_dsi_vdo_boe_lcm_drv;
 extern LCM_DRIVER nt35521_hd720_tm_lcm_drv;
 /* LGE_BSP_COMMON LGE_CHANGE_S 140911 woonghwan.lee : Y70 LCD Bring Up */
-extern LCM_DRIVER r69338_hd720_dsi_vdo_jdi_y70_drv;
+extern LCM_DRIVER db7436_dsi_vdo_fwvga_drv;
 /* LGE_BSP_COMMON LGE_CHANGE_E 140911 woonghwan.lee : Y70 LCD Bring Up */
 
 LCM_DRIVER* lcm_driver_list[] = 
@@ -576,10 +576,9 @@ LCM_DRIVER* lcm_driver_list[] =
 	&hx8394a_hd720_dsi_vdo_tianma_lcm_drv,
 #endif
 
-#if defined(R69338_HD720_DSI_VDO_JDI_Y70)
-	&r69338_hd720_dsi_vdo_jdi_y70_drv,
-#endif
-
+#if defined(DB7436_DSI_VDO_FWVGA)  
+        &db7436_dsi_vdo_fwvga_drv,
+#endif              
 };
 
 #define LCM_COMPILE_ASSERT(condition) LCM_COMPILE_ASSERT_X(condition, __LINE__)
@@ -597,7 +596,7 @@ static unsigned char lcd_id_pins_value = 0xFF;
 
 /******************************************************************************
 Function:       which_lcd_module_triple
-  Description:    read LCD ID PIN status,could identify three status:high¡¢low¡¢float
+  Description:    read LCD ID PIN status,could identify three status:high\A1\A2low\A1\A2float
   Input:           none
   Output:         none
   Return:         LCD ID1|ID0 value
